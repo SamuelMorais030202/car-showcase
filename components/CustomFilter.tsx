@@ -7,7 +7,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { ICustomFilterProps } from "@/types";
 import { updateSearchParams } from "@/utils";
 
-const CustomFilter = ({ title, options, setFilter } : ICustomFilterProps) => {
+function CustomFilter<T> ({ title, options, setFilter } : ICustomFilterProps<T>) {
   const [selected, setSelected] = useState(options[0]);
   
 
@@ -17,7 +17,7 @@ const CustomFilter = ({ title, options, setFilter } : ICustomFilterProps) => {
         value={selected}
         onChange={(e) => {
           setSelected(e)
-          setFilter(e.value)
+          setFilter(e.value as unknown as T)
         }}
       >
         <div className="relative w-fit z-10">

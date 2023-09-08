@@ -62,7 +62,7 @@ export interface ICustomFilterProps<T> {
   title: string;
   options: IOptionProps[];
   setFilter: (slected: T) => void;
-}
+} 
 
 export interface IShowMoreProps {
   pageNumber: number;
